@@ -130,9 +130,9 @@
 
 - (void)cancel
 {
-    [self performWhileLocked: ^{
+    dispatch_async(_queue, ^{
         [self _cancel];
-    }];
+    });
 }
 
 @end
